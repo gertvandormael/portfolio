@@ -9,13 +9,15 @@
 <script>
 import Header from "./components/Header";
 import Projects from "./components/Projects";
-import Footer from "./components/Footer"
+import Footer from "./components/Footer";
 
 export default {
   name: "app",
   components: {
-    Header, Projects, Footer
-  },
+    Header,
+    Projects,
+    Footer
+  }
 };
 </script>
 
@@ -53,12 +55,6 @@ h2 {
     font-size: 1rem;
 }
 
-/* h2:hover {
-    background: -webkit-linear-gradient(#160F29, #368F8B);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-} */
-
 @media (min-width: 992px) {
   h1 {
     font-size: 2rem;
@@ -67,11 +63,11 @@ h2 {
   h2 {
     font-size: 1.5rem;
   }
+
+  body {
+    min-height: 750px;
+    height: 100vh
+  }
 }
-
-
-
-
-  
 
 </style>
