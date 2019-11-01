@@ -1,24 +1,5 @@
 # portfolio
 
-## Project setup
-```
-npm install
-```
+[Portfolio](https://gertvandormael.github.io/portfolio/)
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Feel free to check out my portfolio made with Vue.js! I'm still improving it but feel free to checkout the progress so far.
