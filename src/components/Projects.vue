@@ -65,7 +65,7 @@ export default {
         {
           id: 1,
           name: "Idle game",
-          description: "Become the world's greatest band by clicking!",
+          description: "Become the world's greatest band by clicking! Interactive page where clicking alters the content.",
           coding: "vue.png",
           img: "project-idle-game.png",
           githubLink: "https://gertvandormael.github.io/idle-game/",
@@ -86,7 +86,7 @@ export default {
         {
           id: 3,
           name: "Piano",
-          description: "Playable piano with sounds",
+          description: "In my free time I play piano so I recreated a playable piano with JavaScript",
           coding: "javascript.png",
           img: "project-piano.png",
           githubLink: "https://gertvandormael.github.io/piano/piano.html",
@@ -96,7 +96,7 @@ export default {
         {
           id: 4,
           name: "MVC webshop",
-          description: "Webshop made with a MVC structure",
+          description: "Webshop made with a MVC structure as an introduction to PHP frameworks like Laravel and Symfony",
           coding: "php.png",
           img: "project-mvc.png",
           githubLink: null,
@@ -128,11 +128,11 @@ export default {
 
 <style scoped>
 .tabs {
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; */
   padding: 25px 0px 25px 0px;
-  height: 100px;
+  text-align: center;
 }
 
 li {
@@ -140,7 +140,8 @@ li {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: #d3c0d2;
-  font-size: 1.5rem;
+  font-size: .9rem;
+  padding: 5px 0px 5px 0px;
   cursor: pointer;
 }
 
@@ -152,8 +153,9 @@ li:hover {
 
 .focus {    
   color: #160F29;
-  font-size: 1.5rem;
+  font-size: .9rem;
   font-weight: 700;
+  border-bottom: #160F29 2px solid;
 }
 
 .projects-description {
@@ -161,28 +163,21 @@ li:hover {
   justify-content: center;
 }
 
-/* Large devices (desktops, 992px and up) */
-/* @media (min-width: 992px) { */
-  .projects-description {
+.projects-description {
   display: flex;
   justify-content: center;
-  height: 550px;
-  width: 800px;
-  padding: 30px 15px 30px 15px;
   background: #f5f5f5;
   color: #160F29;
+  padding: 30px 15px 30px 15px;
   border-radius: 50px;
   border: 1px solid black;
-  }
-/* } */
-
-.project-info {
-  width: 600px;
+  min-width: 150px;
+  max-width: 800px;
 }
-
-.projects-description img {
-  max-width: 600px;
-  max-height: 500px;
+ 
+.project-img img {
+  max-width: 300px;
+  max-height: 200px;
   margin-bottom: 5px;
 }
 
@@ -197,12 +192,58 @@ button {
   font-family: "Montserrat", sans-serif;
 }
 
-
 .coding-logo img {
   max-width: 45px;
   max-height: 30px;
 }
 
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .tabs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+  }
+
+}
+
+/* Large devices (desktops, 992px and up) */
+ @media (min-width: 992px) { 
+
+  .tabs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+  }
+
+  li {
+    font-size: 1.5rem;
+  }
+
+  .focus {    
+    font-size: 1.5rem;
+  }
+
+  .projects-description {
+    height: 550px;
+    width: 800px;
+  }
+
+  .project-info {
+    width: 600px;
+  }
+
+  .project-img img {
+    max-width: 600px;
+    max-height: 500px;
+  }
+
+  
+
+}
 
 
 
