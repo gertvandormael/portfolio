@@ -36,14 +36,18 @@ export default {};
   -webkit-text-fill-color: transparent;
 }
 
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .fab {
+    font-size: 3rem;
+  }
+}
+
+
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   .header {
     width: 800px;
-  }
-
-  .fab {
-    font-size: 3rem;
   }
 }
 

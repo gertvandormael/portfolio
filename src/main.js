@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
-import VTooltip from 'v-tooltip'
+import Vue2TouchEvents from 'vue2-touch-events'
 
-Vue.use(VTooltip)
+Vue.use(Vue2TouchEvents)
 
 Vue.config.productionTip = false
 

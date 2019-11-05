@@ -57,8 +57,9 @@ h2 {
     font-size: 1.2rem;
 }
 
-/* // Small devices (landscape phones, 576px and up) */
-@media (min-width: 992px) {
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
   h1 {
     font-size: 2rem;
   }
@@ -66,7 +67,10 @@ h2 {
   h2 {
     font-size: 1.5rem;
   }
+}
 
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
   body {
     min-height: 750px;
   }

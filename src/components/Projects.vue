@@ -5,7 +5,7 @@
         <li
           v-for="project in projects"
           v-bind:key="project.id"
-          @click="clickToactive(project.id)"
+          @click="ClickToActivate(project.id)"
         >
           <div :class="{ focus: projects[project.id].active }"> {{ project.name }} </div>
         </li>
@@ -31,16 +31,28 @@
           <p> {{ project.description }} </p>
           <p v-if="project.info"> {{ project.info}} </p>
           <div
-            class="coding-logo"
+            class="coding-info"
             v-if="project.coding"
           >
             <img
               :src="require(`@/assets/img/` + project.coding)"
               :alt="project.coding"
+              target="_blank"
             >
+            <ul class="links">
+              <li><a
+                  :href="project.githubLink"
+                  target="_blank"
+                >Project link</a></li>
+              <li><a
+                  :href="project.githubSource"
+                  target="_blank"
+                >Source code</a></li>
+            </ul>
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </template>
@@ -54,7 +66,7 @@ export default {
           id: 0,
           name: "About me",
           description:
-            "Hey I'm Gert Vandormael a motivated web developer equipped with knowledge of html, css, javascript, vue.js and php.",
+            "Hey I'm Gert Vandormael a motivated web developer equipped with knowledge of HTML, CSS, JavaScript, Vue.js and PHP.",
           info: "Click on the projects above to see more info about them.",
           coding: null,
           img: null,
@@ -65,7 +77,8 @@ export default {
         {
           id: 1,
           name: "Idle game",
-          description: "Become the world's greatest band by clicking! Interactive page where clicking alters the content.",
+          description:
+            "Become the world's greatest band by clicking! Interactive page where clicking alters the content.",
           coding: "vue.png",
           img: "project-idle-game.png",
           githubLink: "https://gertvandormael.github.io/idle-game/",
@@ -86,7 +99,8 @@ export default {
         {
           id: 3,
           name: "Piano",
-          description: "In my free time I play piano so I recreated a playable piano with JavaScript",
+          description:
+            "In my free time I play piano so I recreated a playable piano with JavaScript",
           coding: "javascript.png",
           img: "project-piano.png",
           githubLink: "https://gertvandormael.github.io/piano/piano.html",
@@ -96,10 +110,11 @@ export default {
         {
           id: 4,
           name: "MVC webshop",
-          description: "Webshop made with a MVC structure as an introduction to PHP frameworks like Laravel and Symfony",
+          description:
+            "Webshop made with a MVC structure as an introduction to PHP frameworks like Laravel and Symfony",
           coding: "php.png",
           img: "project-mvc.png",
-          githubLink: null,
+          githubLink: "https://github.com/gertvandormael/mvc",
           githubSource: "https://github.com/gertvandormael/mvc",
           active: false
         }
@@ -116,7 +131,7 @@ export default {
   },
 
   methods: {
-    clickToactive(id) {
+    ClickToActivate(id) {
       for (let i = 0; i < this.projects.length; i++) {
         this.projects[i].active = false;
         this.projects[id].active = true;
@@ -127,25 +142,22 @@ export default {
 </script>
 
 <style scoped>
+/* Tabs */
 .tabs {
-  /* display: flex;
-  justify-content: space-between;
-  align-items: center; */
-  padding: 25px 0px 25px 0px;
   text-align: center;
 }
 
-li {
+.tabs li {
   background: -webkit-linear-gradient(#368F8B, #160F29);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: #d3c0d2;
-  font-size: .9rem;
+  font-size: 1.2rem;
   padding: 5px 0px 5px 0px;
   cursor: pointer;
 }
 
-li:hover {
+.tabs li:hover {
   background: -webkit-linear-gradient(#160F29, #368F8B);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -153,11 +165,11 @@ li:hover {
 
 .focus {    
   color: #160F29;
-  font-size: .9rem;
+  font-size: 1.2rem;
   font-weight: 700;
-  border-bottom: #160F29 2px solid;
 }
 
+/* Projects section */
 .projects-description {
   display: flex;
   justify-content: center;
@@ -183,18 +195,27 @@ li:hover {
 
 .projects-description p {
   margin-bottom: 10px;
+  width: 300px
 }
 
-button {
-  background: none;
-  border: none;
-  outline-style: none;
-  font-family: "Montserrat", sans-serif;
+a {
+  text-decoration: none;
+  color: #368F8B;
 }
 
-.coding-logo img {
-  max-width: 45px;
-  max-height: 30px;
+a:hover {
+  color: #160F29;
+}
+
+.coding-info {
+  display: flex;
+  align-content: center;
+}
+
+.coding-info img {
+  max-width: 60px;
+  max-height: 36px;
+  margin-right: 8px;
 }
 
 
@@ -207,24 +228,34 @@ button {
     height: 100px;
   }
 
-}
-
-/* Large devices (desktops, 992px and up) */
- @media (min-width: 992px) { 
-
-  .tabs {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 80px;
-  }
-
-  li {
+    .tabs li {
     font-size: 1.5rem;
   }
 
   .focus {    
     font-size: 1.5rem;
+    border-bottom: #160F29 2px solid;
+  }
+
+  .projects-description p {
+    width: 600px;
+  }
+
+  .project-img img {
+    max-width: 600px;
+    max-height: 500px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+ @media (min-width: 992px) { 
+  .tabs li {
+    font-size: 1.5rem;
+  }
+
+  .focus {    
+    font-size: 1.5rem;
+    border-bottom: #160F29 2px solid;
   }
 
   .projects-description {
@@ -235,18 +266,6 @@ button {
   .project-info {
     width: 600px;
   }
-
-  .project-img img {
-    max-width: 600px;
-    max-height: 500px;
-  }
-
-  
-
 }
-
-
-
-
 </style>
 
