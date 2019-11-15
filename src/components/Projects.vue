@@ -80,9 +80,9 @@ export default {
           description:
             "Become the world's greatest band by clicking! Interactive page where clicking alters the content.",
           coding: "vue.png",
-          img: "project-idle-game.png",
-          githubLink: "https://gertvandormael.github.io/idle-game/",
-          githubSource: "https://github.com/gertvandormael/idle-game",
+          img: "bandcremental.png",
+          githubLink: "https://gertvandormael.github.io/bandcremental/#/game",
+          githubSource: "https://github.com/gertvandormael/bandcremental",
           active: false
         },
         {
@@ -186,6 +186,11 @@ export default {
   min-width: 150px;
   max-width: 800px;
 }
+
+.project-img {
+  display: flex;
+  justify-content: center;
+}
  
 .project-img img {
   max-width: 300px;
@@ -233,8 +238,26 @@ a:hover {
   }
 
   .focus {    
+    background: -webkit-linear-gradient(#368F8B, #160F29);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-size: 1.5rem;
-    border-bottom: #160F29 2px solid;
+  }
+
+  .focus {
+    position: relative;
+    padding-bottom: 3px;
+    color: black;
+  }
+
+  .focus::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(to right,#368F8B, #160F29);
   }
 
   .projects-description p {
@@ -242,8 +265,8 @@ a:hover {
   }
 
   .project-img img {
-    max-width: 600px;
-    max-height: 500px;
+    max-width: 500px;
+    max-height: 600px;
   }
 }
 
@@ -251,11 +274,6 @@ a:hover {
  @media (min-width: 992px) { 
   .tabs li {
     font-size: 1.5rem;
-  }
-
-  .focus {    
-    font-size: 1.5rem;
-    border-bottom: #160F29 2px solid;
   }
 
   .projects-description {
